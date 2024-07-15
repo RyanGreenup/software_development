@@ -3,18 +3,38 @@
 
 [Introduction to the Unit](introduction-to-the-unit.md)
 
-[➡️ /Documentation](SUMMARY_documentation.md)
+# Best Practices of Software Developemnt
 
-[➡️ /Dependency Mangement](SUMMARY_dependency-mangement.md)
+- [Developing a Developer Workflow](developing-a-developer-workflow.md)
+- [Documentation](documentation.md)
+- [Dependency Mangement](dependency-mangement.md)
+- [Debugging](debugging.md)
+- [Test Driven Development](test-driven-development.md)
+- [Git](git.md)
+- [Licensing](licensing.md)
 
-[➡️ /Debugging](SUMMARY_debugging.md)
+# Object Oriented Programming
 
 
 
 
-[Test Driven Development](test-driven-development.md)
+## Learning Guide
 
-[➡️ /Git](SUMMARY_git.md)
+## Best Practices of Software Development
+
+Introduction to the Software Development Life Cycle
+Object Oriented and Procedural Approaches to Software Development
+Requirement Analysis and Introduction to Object-Oriented Design
+Implementation: Writing a CLI in Python and Rust
 
 
-[➡️ /Licensing](SUMMARY_licensing.md)
+# Designing Object Oriented Software
+
+[Object Oriented Concepts: Classes and Objects](classes-and-objects.md)
+    - Instantiation, Constructors, Destructors, Encapsulation
+Iheritance and Polymorphism
+Use Cases and Use Case Diagrams
+Domain Modelling and Class Diagrams
+Activity and Sequence Diagrams
+Test Driven Development
+

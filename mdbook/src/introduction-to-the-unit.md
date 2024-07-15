@@ -48,3 +48,20 @@ Software is configured through dotfiles. A developer must manage and track there
 Slack, Mattermost and Matrix. We'll be using Matrix. Studen's are required to reach out to fellow students on Matrix in order to negotiate pull requests and ask for help. However, discussion that should be public should be done on the git repo. This is to ensure that the work is documented for the future.
 
 Licencing. the difference between MIT, GPL and Apache. The importance of licencing your work and the implications of using other peoples work.
+
+
+
+This will be broken up into three topics:
+
+
+- Best Practices of Software Development
+    - We're going to Write a CLI and a TUI in Rust and Python
+- Object Oriented Programming
+    - We're going to write a GUI in Rust
+- Designing Object Oriented Software
+    - We're going to write a GUI in Python
+
+
+Throughout the semester, students will be maintaining each of the projects and submitting pull requests and issues to each other. This is to ensure that students are able to work in a team and that they are able to communicate effectively with each other.
+
+Students will be required to document every step of the way, this will be done in markdown and uploaded to the repository as a static site.
