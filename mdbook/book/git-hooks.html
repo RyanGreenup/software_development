@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Probability - IT1010 -- Statistics</title>
+        <title>Git Hooks - IT1010 -- Statistics</title>
 
 
         <!-- Custom HTML head -->
@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction-to-the-unit.html">Introduction to the Unit</a></li><li class="chapter-item expanded affix "><li class="part-title">Introduction to Statistics</li><li class="chapter-item expanded "><a href="introduction-to-statistical-programming.html"><strong aria-hidden="true">1.</strong> Introduction to Statistical Programming</a></li><li class="chapter-item expanded "><a href="data-manipulation-and-visualization.html"><strong aria-hidden="true">2.</strong> Data Manipulation and Visualization</a></li><li class="chapter-item expanded "><a href="probability.html" class="active"><strong aria-hidden="true">3.</strong> Probability</a></li><li class="chapter-item expanded "><a href="conditional-probability.html"><strong aria-hidden="true">4.</strong> Conditional Probability</a></li><li class="chapter-item expanded affix "><li class="part-title">Parametric Statistics</li><li class="chapter-item expanded "><a href="statistical-distributions-and-hypothesis-testing.html"><strong aria-hidden="true">5.</strong> Statistical Distributions and Hypothesis Testing</a></li><li class="chapter-item expanded "><a href="binomial-and-poisson-tests.html"><strong aria-hidden="true">6.</strong> Binomial and Poisson Tests</a></li><li class="chapter-item expanded "><a href="chi-square-tests.html"><strong aria-hidden="true">7.</strong> Chi-Square Tests</a></li><li class="chapter-item expanded "><a href="normal-distribution-tests-and-intervals.html"><strong aria-hidden="true">8.</strong> Normal Distribution Tests and Intervals</a></li><li class="chapter-item expanded "><a href="central-limit-theorem.html"><strong aria-hidden="true">9.</strong> Central Limit Theorem</a></li><li class="chapter-item expanded "><a href="t-tests.html"><strong aria-hidden="true">10.</strong> t-Tests</a></li><li class="chapter-item expanded "><a href="anova.html"><strong aria-hidden="true">11.</strong> ANOVA</a></li><li class="chapter-item expanded "><a href="simple-linear-regression.html"><strong aria-hidden="true">12.</strong> Simple Linear Regression</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction-to-the-unit.html">Introduction to the Unit</a></li><li class="chapter-item expanded affix "><li class="part-title">Best Practices of Software Developemnt</li><li class="chapter-item expanded "><a href="test-driven-development.html"><strong aria-hidden="true">1.</strong> Test Driven Development</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="documentation.html"><strong aria-hidden="true">1.1.</strong> Documentation</a></li><li class="chapter-item expanded "><a href="debugging.html"><strong aria-hidden="true">1.2.</strong> Debugging</a></li><li class="chapter-item expanded "><a href="git.html"><strong aria-hidden="true">1.3.</strong> Git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="git-hooks.html" class="active"><strong aria-hidden="true">1.3.1.</strong> Git Hooks</a></li></ol></li><li class="chapter-item expanded "><a href="makefiles.html"><strong aria-hidden="true">1.4.</strong> Makefiles</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Object Oriented Programming</li><li class="chapter-item expanded "><a href="object-oriented-and-procedural-approaches-to-software-development.html"><strong aria-hidden="true">2.</strong> Object Oriented and Procedural Approaches to Software Development</a></li><li class="chapter-item expanded "><a href="classes-and-objects.html"><strong aria-hidden="true">3.</strong> Object Oriented Concepts: Classes and Objects</a></li><li class="chapter-item expanded affix "><li class="part-title">Designing Object Oriented Software</li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -416,17 +416,85 @@
   --color-pink: #d53984;
 }
 </style>
-<h1 id="probability"><a class="header" href="#probability">Probability</a></h1>
+<h1 id="git-hooks"><a class="header" href="#git-hooks">Git Hooks</a></h1>
+<ul>
+<li>Formatting
+<ul>
+<li>Linters
+<pre><code class="language-sh"># .git/hooks/pre-commit
+#!/bin/sh
+npm run lint
+if [ $? -ne 0 ]; then
+  echo "Linting failed, commit aborted."
+  exit 1
+fi
+</code></pre>
+</li>
+<li>Enforcing Code Style
+<pre><code class="language-sh"># .git/hooks/pre-commit
+#!/bin/sh
+black .
+if [ $? -ne 0 ]; then
+  echo "Code Formatting Failed. Commit aborted."
+  exit 1
+fi
+</code></pre>
+</li>
+<li>Enforcing Conventional Commit Message
+<pre><code class="language-sh"># .git/hooks/commit-msg
+#!/bin/sh
+COMMIT_MSG_FILE=$1
+if ! grep -q -E "^(feat|fix|docs|style|refactor|test|chore):" "$COMMIT_MSG_FILE"; then
+  echo "Commit message does not follow Conventional Commit format. Commit aborted."
+  exit 1
+fi
+</code></pre>
+</li>
+</ul>
+</li>
+<li>Run Tests
+<pre><code class="language-sh"># .git/hooks/pre-push
+#!/bin/sh
+pytest
+if [ $? -ne 0 ]; then
+  echo "Tests failed, push aborted."
+  exit 1
+fi
+</code></pre>
+</li>
+<li>Notification Systems
+<pre><code class="language-sh"># .git/hooks/post-commit
+#!/bin/sh
+COMMIT_HASH=`git rev-parse HEAD`
+AUTHOR=`git log -1 --pretty=format:'%an'`
+COMMIT_MSG=`git log -1 --pretty=format:'%s'`
+SLACK_WEBHOOK_URL="https://hooks.slack.com/services/YOUR/WEBHOOK/URL"
+curl -X POST -H 'Content-type: application/json' --data "{
+  \"text\": \"New commit by $AUTHOR: $COMMIT_MSG ($COMMIT_HASH)\"
+}" $SLACK_WEBHOOK_URL
+</code></pre>
+</li>
+<li>Check for Secrets
+<pre><code class="language-sh"># .git/hooks/pre-push
+#!/bin/sh
+SECRET_TOOL_CMD="detect-secrets scan"
+$SECRET_TOOL_CMD
+grep "My_API_Key" -r . &amp;&amp; \
+    echo "Secrets detected, push aborted." &amp;&amp; \
+    exit 1
+</code></pre>
+</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="data-manipulation-and-visualization.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="git.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="conditional-probability.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="makefiles.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -436,11 +504,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="data-manipulation-and-visualization.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="git.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="conditional-probability.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="makefiles.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

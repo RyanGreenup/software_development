@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Developing a Developer Workflow - IT1010 -- Statistics</title>
+        <title>Object Oriented Concepts: Classes and Objects - IT1010 -- Statistics</title>
 
 
         <!-- Custom HTML head -->
@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction-to-the-unit.html">Introduction to the Unit</a></li><li class="chapter-item expanded affix "><li class="part-title">Best Practices of Software Developemnt</li><li class="chapter-item expanded "><a href="developing-a-developer-workflow.html" class="active"><strong aria-hidden="true">1.</strong> Developing a Developer Workflow</a></li><li class="chapter-item expanded "><a href="documentation.html"><strong aria-hidden="true">2.</strong> Documentation</a></li><li class="chapter-item expanded "><a href="dependency-mangement.html"><strong aria-hidden="true">3.</strong> Dependency Mangement</a></li><li class="chapter-item expanded "><a href="debugging.html"><strong aria-hidden="true">4.</strong> Debugging</a></li><li class="chapter-item expanded "><a href="test-driven-development.html"><strong aria-hidden="true">5.</strong> Test Driven Development</a></li><li class="chapter-item expanded "><a href="git.html"><strong aria-hidden="true">6.</strong> Git</a></li><li class="chapter-item expanded "><a href="licensing.html"><strong aria-hidden="true">7.</strong> Licensing</a></li><li class="chapter-item expanded affix "><li class="part-title">Object Oriented Programming</li><li class="chapter-item expanded affix "><li class="part-title">Designing Object Oriented Software</li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction-to-the-unit.html">Introduction to the Unit</a></li><li class="chapter-item expanded affix "><li class="part-title">Best Practices of Software Developemnt</li><li class="chapter-item expanded "><a href="test-driven-development.html"><strong aria-hidden="true">1.</strong> Test Driven Development</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="documentation.html"><strong aria-hidden="true">1.1.</strong> Documentation</a></li><li class="chapter-item expanded "><a href="debugging.html"><strong aria-hidden="true">1.2.</strong> Debugging</a></li><li class="chapter-item expanded "><a href="git.html"><strong aria-hidden="true">1.3.</strong> Git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="git-hooks.html"><strong aria-hidden="true">1.3.1.</strong> Git Hooks</a></li></ol></li><li class="chapter-item expanded "><a href="makefiles.html"><strong aria-hidden="true">1.4.</strong> Makefiles</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Object Oriented Programming</li><li class="chapter-item expanded "><a href="object-oriented-and-procedural-approaches-to-software-development.html"><strong aria-hidden="true">2.</strong> Object Oriented and Procedural Approaches to Software Development</a></li><li class="chapter-item expanded "><a href="classes-and-objects.html" class="active"><strong aria-hidden="true">3.</strong> Object Oriented Concepts: Classes and Objects</a></li><li class="chapter-item expanded affix "><li class="part-title">Designing Object Oriented Software</li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -416,191 +416,111 @@
   --color-pink: #d53984;
 }
 </style>
-<h1 id="developing-a-developer-workflow"><a class="header" href="#developing-a-developer-workflow">Developing a Developer Workflow</a></h1>
-<h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
-<p>This subject develops skills around best practices in software development. This all starts with developing habits workflows, which itself begins with a knowledge and understanding of the tools and approaches that have been widely adopted in the community.</p>
-<p>These are written, broadly, in an order to help you get started.</p>
-<h2 id="version-control"><a class="header" href="#version-control">Version Control</a></h2>
-<h3 id="what-is-version-control"><a class="header" href="#what-is-version-control">What is Version Control</a></h3>
-<p>Version control is analogous to track changes in something like <em>Microsoft Word</em>. It's a long list of changes that have been made to a document, but it's a lot more powerful than that. It allows you to see who made the changes, when they were made, and why they were made <sup class="footnote-reference"><a href="#1720957340">1</a></sup>. It also allows you to revert to a previous version of the document if you make a mistake and have multiple versions simultaneously.</p>
-<p>There are multiple version control systems such as SVN, Mercurial and CVS but the most popular is <em>Git</em>. Git is a distributed version control system, which means that every user has a complete copy of the repository on their local machine. This allows you to work offline and collaborate with others without needing to be connected to the internet.</p>
-<p>In this class we will use git to track changes to our documentation, code and notes. We will use a convention called <em>Conventional Commits</em> to ensure that our commit messages are meaningful and easy to understand. Finally, we will be using <code>git</code> to collaborate with each other and submit pull requests.</p>
-<h3 id="learning-git"><a class="header" href="#learning-git">Learning <code>git</code></a></h3>
-<p>The best way to learn <code>git</code>, like most things, is to use it. Start, right now, using <code>git</code> to track your notes, assessments and dotfiles, within a couple weeks you will have the basics down pat.</p>
-<h3 id="using-git"><a class="header" href="#using-git">Using <code>git</code></a></h3>
-<p>It's important to understand the structure of the <code>.git/config</code> and the basics of the CLI, but most of the time you'll find it easier to use a UI like <code>gitui</code>. These are much quicker to use and easier to understand.</p>
-<h3 id="actionables"><a class="header" href="#actionables">Actionables</a></h3>
-<ul>
-<li><input disabled="" type="checkbox"/>
-Install <code>git</code> and <code>gitui</code>
-<ul>
-<li><code>pacman -S git rustup</code></li>
-<li><code>rustup init -y &amp;&amp; rustup default nightly</code></li>
-<li><code>cargo install gitui</code></li>
-</ul>
-</li>
-<li><input disabled="" type="checkbox"/>
-Create a git repo for your notes
-<pre><code class="language-sh">mkdir -p ~/Notes/slipbox/
-cd ~/Notes/slipbox/
-git init
-gitui
+<h1 id="object-oriented-concepts-classes-and-objects"><a class="header" href="#object-oriented-concepts-classes-and-objects">Object Oriented Concepts: Classes and Objects</a></h1>
+<h2 id="constructors-and-destructors"><a class="header" href="#constructors-and-destructors">Constructors and Destructors</a></h2>
+<p>A class uses a constructor to build itself, for example in Python a Car class would have a constructor:</p>
+<pre><code class="language-python">class Car:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0
+
+    def get_descriptive_name(self):
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
+
+my_car = Car('audi', 'a4', 2021)
+print(my_car.get_descriptive_name())
 </code></pre>
-</li>
-<li><input disabled="" type="checkbox"/>
-Create a git repo for your dotfiles
-<ul>
-<li>See generally <sup class="footnote-reference"><a href="#1720958305">2</a></sup></li>
-</ul>
-</li>
-</ul>
-<div class="footnote-definition" id="1720958305"><sup class="footnote-definition-label">2</sup>
-<p><a href="https://github.com/RyanGreenup/DotFiles">RyanGreenup/DotFiles: All my DotFiles and Templates</a></p>
+<p>A destructor is used to clean up anything that was set up by the class. This isn't common in Python as the language is garbage collected, meaning the interpreter systematically stops to manage and clean up memory, this technique is common and implemented by languages including, e.g., Go, JavaScript and Java.</p>
+<p>In Python, destructors are not used often as often as they are in other languages like C++ because Python is garbage collected. When there are no reference to an object, python frees the memory with the garbage collector <sup class="footnote-reference"><a href="#1721043357">1</a></sup> . A destructor in Python is a method that is called when a class is about to be destroyed or garbage collected. This is implemented by the <code>__del__()</code> method.</p>
+<div class="footnote-definition" id="1721043357"><sup class="footnote-definition-label">1</sup>
+<p>This needen't be complex either, reference counting involves counting the number of references and freeing the memory when it hits 0.</p>
 </div>
-<div class="footnote-definition" id="1720957340"><sup class="footnote-definition-label">1</sup>
-<p>Assuming the author was a good person and made meaningful commit messages.</p>
-</div>
-<h2 id="notetaking"><a class="header" href="#notetaking">Notetaking</a></h2>
-<p>As a developer, you must write down everything that you do. This is important for a number of reasons, but the most important is that it allows you to reflect on your work and improve.</p>
-<p>Pick a piece of software, write atomic self contained notes and link to them, there's pleanty of community resources for this so I'll simple recommend some software, offer some pointers and leave it at that.</p>
-<h3 id="software"><a class="header" href="#software">Software</a></h3>
-<ul>
-<li>Tasks
-<ul>
-<li>Org Mode
-<ul>
-<li>Use this to keep a todo list and log of your work.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Notes
-<ul>
-<li>Obsidian (⚠ Non-Free)</li>
-<li>Zettlr</li>
-<li>Vnote</li>
-<li>Dokuwiki</li>
-<li>VSCode + Quartz</li>
-<li>Joplin
-<ul>
-<li>⚠ Doesn't support markdown links</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>Have a browse through the list on <a href="https://www.reddit.com/r/PKMS/comments/nfef59/list_of_personal_knowledge_management_systems/">r/pkms</a>.</p>
-<h3 id="tips"><a class="header" href="#tips">Tips</a></h3>
-<ul>
-<li>Keep your notes atomic
-<ul>
-<li>One note, one idea</li>
-</ul>
-</li>
-<li>Link your notes
-<ul>
-<li>Rather than one long note, link to other notes</li>
-</ul>
-</li>
-<li>Use <code>git</code> to track your notes.</li>
-<li>Use a flat file structure</li>
-</ul>
-<h3 id="reflections"><a class="header" href="#reflections">Reflections</a></h3>
-<p>I, personally, use a combination of NeoVim, VSCode, Quartz and a CLI I wrote that implements search, linking etc. I also use <em>Dokuwiki</em> and Org Mode in between. Org mode is great for tracking notes and snippets on a current project.</p>
-<p>There's lots of online resources such as <sup class="footnote-reference"><a href="#1720959655">3</a></sup> <sup class="footnote-reference"><a href="#1720959668">4</a></sup></p>
-<div class="footnote-definition" id="1720959668"><sup class="footnote-definition-label">4</sup>
-<p><a href="https://www.reddit.com/r/Zettelkasten/">Zettelkasten</a></p>
-</div>
-<div class="footnote-definition" id="1720959655"><sup class="footnote-definition-label">3</sup>
-<p><a href="https://www.reddit.com/r/DigitalGardens/">Digital Gardens</a></p>
-</div>
-<p>For many of the topics in this class, there will be additional workshops held on Thursday's that will serve as assistance for the topics covered. These workshops are only a supplement to the research and self-development required to succeed in this subject.</p>
-<ul>
-<li>Git</li>
-<li>Notetaking</li>
-<li>Installing Python
-<ul>
-<li>Correctly</li>
-</ul>
-</li>
-<li>Installing Rust</li>
-<li>Introduction to distrobox</li>
-<li>dotfiles</li>
-<li>Basic usage of the shell
-<ul>
-<li>TUIs
-<ul>
-<li>gitui</li>
-<li>yazi</li>
-</ul>
-</li>
-<li>CLI
-<ul>
-<li>ripgrep</li>
-<li>fd</li>
-<li>bat</li>
-<li>fzf</li>
-<li>Pandoc</li>
-</ul>
-</li>
-<li>Editors
-<ul>
-<li>Jupyter</li>
-<li>VsCode</li>
-<li>Neovim
-<ul>
-<li>Astrovim</li>
-<li>lazyVim</li>
-<li>My Neovim Config</li>
-<li>Mini Vim</li>
-</ul>
-</li>
-<li>Emacs</li>
-</ul>
-</li>
-<li>Shells
-<ul>
-<li>Posix
-<ul>
-<li>Zsh</li>
-</ul>
-</li>
-<li>Friendly
-<ul>
-<li>Fish</li>
-<li>Xonsh</li>
-<li>Elvish</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Notetaking
-<ul>
-<li>Org Mode</li>
-<li>Markdown
-<ul>
-<li>Obsidian</li>
-<li>Vnote</li>
-<li>Jopline</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<pre><code class="language-python">del my_car
+</code></pre>
+<p>Python will call the <code>my_car.__del__()</code> method, this will also be called when the variable goes out of scope and is picked up by the garbage collector.</p>
+<p>In this example, when <code>my_object</code> is created, Python calls the class constructor (<code>__init__</code>). When we delete <code>my_object</code> with <code>del</code> or when it goes out of scope (like at the end of our program), Python will call the destructor (<code>__del__</code>) before the object gets destroyed. However, the <code>__del__()</code> method will not be called immediately after an object is out of scope, Python's garbage collector will trigger the <code>__del__()</code> method when it sees fit.</p>
+<pre><code class="language-python">class ExampleClass:
+    def __init__(self):
+        print('Creating object with class ExampleClass')
+
+    # Destructor method
+    def __del__(self):
+        print('Destructor called, object is about to be destroyed.')
+
+# Creating an instance of the class
+my_object = ExampleClass()
+
+# This line will print "Destructor called, object is about to be destroyed"
+# because my_object's reference count reaches zero
+del my_object
+</code></pre>
+<p>Destructors are more common in languages like C++, e.g.:</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+// Define a class that holds some data
+class ExampleClass {
+public:
+    int data;
+
+    // Constructor to initialize the object
+    ExampleClass(int d) : data(d) {}
+
+    // Destructor to clean up resources
+    ~ExampleClass() {
+        std::cout &lt;&lt; "Destructing an ExampleClass. The data was: " &lt;&lt; data &lt;&lt; std::endl;
+    }
+};
+
+int main() {
+    // Create an instance of the class
+    ExampleClass example(42);
+
+    std::cout &lt;&lt; "Before destruction" &lt;&lt; std::endl;
+
+    // 'example' goes out of scope here, so its destructor will be called automatically
+    return 0;
+}
+</code></pre>
+<pre><code>Before destruction
+Destructing an ExampleClass. The data was: 42
+</code></pre>
+<p>In this example the <code>ExampleClass</code> holds integer <code>data</code> and the constructor initializes the <code>data</code> member when a new object is created. The destructor,  <code>~ExampleClass()</code>, is called automatically when the object goes out of scope (in this case after <code>main()</code>). The method simply prints a message but could be used to free memory that was allocated by the developer, e.g. for an array.</p>
+<p>Note the use of <code>std::cout &lt;&lt; "some text"</code> (part of the <code>iostream.h</code> library, this is an alternative to <code>pritnf("Some text");</code> part of the <code>&lt;stdio.h&gt;</code> library.</p>
+<p>Languages like C, C++ and Zig require the developer to manage memory, this is more performant but a source of mistakes which lead to unintended behaviour (i.e. bugs) and security vulnerabilities.</p>
+<p>Rust, a language we will be using in this subject, takes a different approach. Instead of requiring the user to manage memory or using a garbage collector, a set of rules are used and checked for at compile time to ensure the program is memory safe. These rules, referred to as borrow checking, are similar to an approach called RAII in C++ and ensure that memory is handled correctly. This is not free though, this pattern of programming does restrict the developer from approaches that are memory safe but outside that pattern of development. We will be using Rust in this subject to teach compiled strongly typed development and to contrast the different implementation of OOP compared to Python. Rust has an easier development toolchain and, pedagogically speaking, is a better language to start out with. Students will need to learn C++ first, but for now use Python and Rust to develop solid foundation before dealing with the additional complexities of C++.</p>
+<p>In Rust, destructors are implemented via the <code>Drop</code> trait. However, Rust's borrow checker minimizes the need for explicit destructors because objects are automatically deallocated when they fall out of scope. In idiomatic Rust, it is rare reach for a destructor.</p>
+<pre><pre class="playground"><code class="language-rust">// Define a struct that holds some data
+struct ExampleStruct {
+    data: Box&lt;i32&gt;,
+}
+
+// Implement the Drop trait for our struct to define custom cleanup behavior
+impl Drop for ExampleStruct {
+    fn drop(&amp;mut self) {
+        println!("Dropping an ExampleStruct. The data was: {}", *self.data);
+    }
+}
+
+fn main() {
+    // Create an instance of the struct
+    let example = ExampleStruct { data: Box::new(42) };
+
+    println!("Before dropping");
+
+    // The example variable falls out of scope here, so its destructor will be called automatically
+}</code></pre></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="introduction-to-the-unit.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="object-oriented-and-procedural-approaches-to-software-development.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="documentation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -608,13 +528,10 @@ Create a git repo for your dotfiles
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="introduction-to-the-unit.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="object-oriented-and-procedural-approaches-to-software-development.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="documentation.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>

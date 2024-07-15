@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction-to-the-unit.html" class="active">Introduction to the Unit</a></li><li class="chapter-item expanded affix "><li class="part-title">Introduction to Statistics</li><li class="chapter-item expanded "><a href="introduction-to-statistical-programming.html"><strong aria-hidden="true">1.</strong> Introduction to Statistical Programming</a></li><li class="chapter-item expanded "><a href="data-manipulation-and-visualization.html"><strong aria-hidden="true">2.</strong> Data Manipulation and Visualization</a></li><li class="chapter-item expanded "><a href="probability.html"><strong aria-hidden="true">3.</strong> Probability</a></li><li class="chapter-item expanded "><a href="conditional-probability.html"><strong aria-hidden="true">4.</strong> Conditional Probability</a></li><li class="chapter-item expanded affix "><li class="part-title">Parametric Statistics</li><li class="chapter-item expanded "><a href="statistical-distributions-and-hypothesis-testing.html"><strong aria-hidden="true">5.</strong> Statistical Distributions and Hypothesis Testing</a></li><li class="chapter-item expanded "><a href="binomial-and-poisson-tests.html"><strong aria-hidden="true">6.</strong> Binomial and Poisson Tests</a></li><li class="chapter-item expanded "><a href="chi-square-tests.html"><strong aria-hidden="true">7.</strong> Chi-Square Tests</a></li><li class="chapter-item expanded "><a href="normal-distribution-tests-and-intervals.html"><strong aria-hidden="true">8.</strong> Normal Distribution Tests and Intervals</a></li><li class="chapter-item expanded "><a href="central-limit-theorem.html"><strong aria-hidden="true">9.</strong> Central Limit Theorem</a></li><li class="chapter-item expanded "><a href="t-tests.html"><strong aria-hidden="true">10.</strong> t-Tests</a></li><li class="chapter-item expanded "><a href="anova.html"><strong aria-hidden="true">11.</strong> ANOVA</a></li><li class="chapter-item expanded "><a href="simple-linear-regression.html"><strong aria-hidden="true">12.</strong> Simple Linear Regression</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction-to-the-unit.html" class="active">Introduction to the Unit</a></li><li class="chapter-item expanded affix "><li class="part-title">Best Practices of Software Developemnt</li><li class="chapter-item expanded "><a href="test-driven-development.html"><strong aria-hidden="true">1.</strong> Test Driven Development</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="documentation.html"><strong aria-hidden="true">1.1.</strong> Documentation</a></li><li class="chapter-item expanded "><a href="debugging.html"><strong aria-hidden="true">1.2.</strong> Debugging</a></li><li class="chapter-item expanded "><a href="git.html"><strong aria-hidden="true">1.3.</strong> Git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="git-hooks.html"><strong aria-hidden="true">1.3.1.</strong> Git Hooks</a></li></ol></li><li class="chapter-item expanded "><a href="makefiles.html"><strong aria-hidden="true">1.4.</strong> Makefiles</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Object Oriented Programming</li><li class="chapter-item expanded "><a href="object-oriented-and-procedural-approaches-to-software-development.html"><strong aria-hidden="true">2.</strong> Object Oriented and Procedural Approaches to Software Development</a></li><li class="chapter-item expanded "><a href="classes-and-objects.html"><strong aria-hidden="true">3.</strong> Object Oriented Concepts: Classes and Objects</a></li><li class="chapter-item expanded affix "><li class="part-title">Designing Object Oriented Software</li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -417,46 +417,60 @@
 }
 </style>
 <h1 id="introduction-to-the-unit"><a class="header" href="#introduction-to-the-unit">Introduction to the Unit</a></h1>
-<p>See Generally <a href="https://ryangreenup.github.io/environmental-informatics-2023/04_confidence_intervals/prediction-intervals.html">Environmental Informatics 2023</a></p>
-<h2 id="mermaid-diagram"><a class="header" href="#mermaid-diagram">Mermaid Diagram</a></h2>
-<pre class="mermaid">graph TD
-    A[First Year Statistics Course]
-    B[Semester 1]
-    C[Semester 2]
-    D[Topic 1: Introduction to Statistics]
-    E[Topic 2: Descriptive Statistics]
-    F[Topic 3: Probability]
-    G[Topic 4: Discrete Random Variables]
-    H[Topic 5: Continuous Random Variables]
-    I[Topic 6: Sampling Distributions]
-    J[Topic 7: Estimation]
-    K[Topic 8: Hypothesis Testing]
-    L[Topic 9: Correlation and Regression]
-    M[Topic 10: Chi-Square Tests]
-    N[Topic 11: Analysis of Variance]
-    O[Topic 12: Non-parametric Tests]
-    A --&gt; B
-    A --&gt; C
-    B --&gt; D
-    B --&gt; E
-    B --&gt; F
-    B --&gt; G
-    C --&gt; H
-    C --&gt; I
-    C --&gt; J
-    C --&gt; K
-    C --&gt; L
-    C --&gt; M
-    C --&gt; N
-    C --&gt; O
-</pre>
+<p>This subject develops skills around best practices in software development using Python and Rust.</p>
+<p>In this subject we will develop habits and reinforce workflows by writing software with tooling and approaches that have been widely adopted in the community.</p>
+<p>This class begins by looking at documentation, debugging, version control and test driven development, comparing the approaches taken by Rust and python, this will be re-inforced by writing a CLI and a TUI in Rust or Python, students will be required to document every step in there notes, track changes with git via conventional commits <sup class="footnote-reference"><a href="#1720952337">1</a></sup> and asked to compare the development experience in both languages for documentation, tdd and typing.</p>
+<div class="footnote-definition" id="1720952337"><sup class="footnote-definition-label">1</sup>
+<p><a href="https://www.conventionalcommits.org/en/v1.0.0/#summary">Conventional Commits</a></p>
+</div>
+<p>Students will be required to upload there work to a git repo, identify bugs in a students work and then submit and merge a pull request. It is totally acceptable to ask for guidance from the developer, but this must be done using the tooling of the chosen platform. Documentation must be uploaded as a static site to the repository.</p>
+<p>We then look at developing a deeper understanding of OOP by comparing the implementation of Rust and python and re-inforcing this be developing an immediate-mode GUI in rust.</p>
+<p>Finally we dive deeper into OOP with Python and develop a GUI.</p>
+<p>This subject is entirely focused on practical implementation and reflection. There is no one right answer to software development and developers tend to have a lot of opinions. The aim here is to demonstrate how best practices</p>
+<p>Need to cover LSP, go to definition, find references.</p>
+<p>How to use local LLms, and tools like copilot.</p>
+<p>Which languages they perform the best on. The codellama paper and stableLM paper have good summaries. TL;DR Python, Javascript and rust. Avoid Bash or Kotlin.</p>
+<p>Need to cover notetaking and keeping a log of work. Org mode is quite good for this.</p>
+<p>Need to cover make, just and</p>
+<p>Developer tooling, vim emacs and vscode. How to use them effectively.</p>
+<p>Learning lua and writing a vim config can automate <strong>a lot</strong>. Simply writing shell/py scripts and shelling out in neovim is a simple and easy way to cut through a lot of repetition without diving into the intricacies and depth of vim / emacs. Configuring VSCode is a lot more involved, but it is a lot more feature rich out of the box. It's important to learn all of these editors at a cursory level because editing text is the bread and butter of software development. Above all it is crucial to develop a workflow that is comfortable and efficient for you. I recommend starting with VSCode and then moving to vim or emacs as you become more comfortable with the language you are working with.</p>
+<p>Managing dotfiles.</p>
+<p>Software is configured through dotfiles. A developer must manage and track there dotfiles in order to ensure there work is reproducable. I recommand a bare git repo under <code>$HOME</code> <sup class="footnote-reference"><a href="#1720954338">2</a></sup> <sup class="footnote-reference"><a href="#1720954344">3</a></sup>, however tools like Stow and Chezmoi are good too.</p>
+<div class="footnote-definition" id="1720954344"><sup class="footnote-definition-label">3</sup>
+<p><a href="https://gitlab.com/RyanGreenup/bare_dot_go">RyanGreenup / bare_dot_go · GitLab</a></p>
+</div>
+<div class="footnote-definition" id="1720954338"><sup class="footnote-definition-label">2</sup>
+<p><a href="https://github.com/RyanGreenup/DotFiles">RyanGreenup/DotFiles: All my DotFiles and Templates</a></p>
+</div>
+<p>Slack, Mattermost and Matrix. We'll be using Matrix. Studen's are required to reach out to fellow students on Matrix in order to negotiate pull requests and ask for help. However, discussion that should be public should be done on the git repo. This is to ensure that the work is documented for the future.</p>
+<p>Licencing. the difference between MIT, GPL and Apache. The importance of licencing your work and the implications of using other peoples work.</p>
+<p>This will be broken up into three topics:</p>
+<ul>
+<li>Best Practices of Software Development
+<ul>
+<li>We're going to Write a CLI and a TUI in Rust and Python</li>
+</ul>
+</li>
+<li>Object Oriented Programming
+<ul>
+<li>We're going to write a GUI in Rust</li>
+</ul>
+</li>
+<li>Designing Object Oriented Software
+<ul>
+<li>We're going to write a GUI in Python</li>
+</ul>
+</li>
+</ul>
+<p>Throughout the semester, students will be maintaining each of the projects and submitting pull requests and issues to each other. This is to ensure that students are able to work in a team and that they are able to communicate effectively with each other.</p>
+<p>Students will be required to document every step of the way, this will be done in markdown and uploaded to the repository as a static site.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
 
-                            <a rel="next prefetch" href="introduction-to-statistical-programming.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="test-driven-development.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -467,7 +481,7 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
 
-                    <a rel="next prefetch" href="introduction-to-statistical-programming.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="test-driven-development.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
