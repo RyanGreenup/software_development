@@ -1,3 +1,0 @@
-# Iheritance and Polymorphism
-
-

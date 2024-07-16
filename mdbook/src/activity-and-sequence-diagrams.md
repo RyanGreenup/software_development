@@ -1,3 +1,0 @@
-# Activity and Sequence Diagrams
-
-
