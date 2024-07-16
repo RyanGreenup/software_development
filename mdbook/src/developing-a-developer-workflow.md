@@ -113,3 +113,25 @@ For many of the topics in this class, there will be additional workshops held on
         - Obsidian
         - Vnote
         - Jopline
+
+Software is configured through dotfiles. A developer must manage and track there dotfiles in order to ensure there work is reproducable. I recommand a bare git repo under `$HOME` [^1720954338] [^1720954344], however tools like Stow and Chezmoi are good too.
+
+
+Need to cover LSP, go to definition, find references.
+
+How to use local LLms, and tools like copilot.
+
+Which languages they perform the best on. The codellama paper and stableLM paper have good summaries. TL;DR Python, Javascript and rust. Avoid Bash or Kotlin.
+
+Need to cover notetaking and keeping a log of work. Org mode is quite good for this.
+
+Need to cover make, just and
+
+
+Developer tooling, vim emacs and vscode. How to use them effectively.
+
+Learning lua and writing a vim config can automate **a lot**. Simply writing shell/py scripts and shelling out in neovim is a simple and easy way to cut through a lot of repetition without diving into the intricacies and depth of vim / emacs. Configuring VSCode is a lot more involved, but it is a lot more feature rich out of the box. It's important to learn all of these editors at a cursory level because editing text is the bread and butter of software development. Above all it is crucial to develop a workflow that is comfortable and efficient for you. I recommend starting with VSCode and then moving to vim or emacs as you become more comfortable with the language you are working with.
+
+
+Managing dotfiles.
+

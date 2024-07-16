@@ -1,45 +1,31 @@
 # Introduction to the Unit
 
-This subject develops skills around best practices in software development using Python and Rust.
-
-In this subject we will develop habits and reinforce workflows by writing software with tooling and approaches that have been widely adopted in the community.
-
-This class begins by looking at documentation, debugging, version control and test driven development, comparing the approaches taken by Rust and python, this will be re-inforced by writing a CLI and a TUI in Rust or Python, students will be required to document every step in there notes, track changes with git via conventional commits [^1720952337] and asked to compare the development experience in both languages for documentation, tdd and typing.
-
-[^1720952337]: [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#summary)
+This unit focuses on developing skills and habits of best practice in software development using Python and Rust. Students will practice software development focusing particularly on documentation, debugging, version control, object oriented design, test-driven development (TDD), tooling, and more!
 
 
-Students will be required to upload there work to a git repo, identify bugs in a students work and then submit and merge a pull request. It is totally acceptable to ask for guidance from the developer, but this must be done using the tooling of the chosen platform. Documentation must be uploaded as a static site to the repository.
+This course follows three main sections:
 
-We then look at developing a deeper understanding of OOP by comparing the implementation of Rust and python and re-inforcing this be developing an immediate-mode GUI in rust.
-
-Finally we dive deeper into OOP with Python and develop a GUI.
-
-This subject is entirely focused on practical implementation and reflection. There is no one right answer to software development and developers tend to have a lot of opinions. The aim here is to demonstrate how best practices
-
-
-Need to cover LSP, go to definition, find references.
-
-How to use local LLms, and tools like copilot.
-
-Which languages they perform the best on. The codellama paper and stableLM paper have good summaries. TL;DR Python, Javascript and rust. Avoid Bash or Kotlin.
+- Best Practices of Software Development in Python & Rust
+    - **Implementation**: Develop a CLI / TUI with Rust and Python that includes a git repo with conventional commits [^1720952337], documentation, test coverage and a static site.
+- Object Oriented Programming in Python and Rust
+    - **Implementation**: Develop an immediate mode Gui in Rust, as above
+- Object Oriented Design
+    - **Implementation**: Develop a GUI in PySide6, as above
 
 
+Students will maintain these projects in a public `git` repo and be required to submit pull requests (PR), report issues to each other and discuss development on Matrix.
+
+This unit aims to develop practical skills to ground theoretical concepts while encouraging students to reflect upon the best practices in software development. This is acheived by devloping habits and reinforcing workflows around modern tooling widely adoptoed in the dev space, this foundation will be a platform that the future practioner can build upon as they grow. This course is designed for undergraduate students who are familiar with basic programming, seeking to deepen their understanding by developing software.
+
+In addition, we encourage students track their environment configuration with `git` and share it with the class. This will help motivate the importance of reproducibility, documentation and collaboration in software development.
+
+Finally, students will be asked to reflect on the development experience in both languages for documentation, TDD, typing etc. Software developers use a variety of different languages and must understand the benefits and differences of each language to be effective in the field.
 
 
-Need to cover notetaking and keeping a log of work. Org mode is quite good for this.
-
-Need to cover make, just and
+This subject is entirely focused on practical implementation and reflection. There is no one right answer to software development and developers tend to have a lot of opinions. The aim here is to equip students with a foundational workflow that can be adapted to a future career in software development.
 
 
-Developer tooling, vim emacs and vscode. How to use them effectively.
 
-Learning lua and writing a vim config can automate **a lot**. Simply writing shell/py scripts and shelling out in neovim is a simple and easy way to cut through a lot of repetition without diving into the intricacies and depth of vim / emacs. Configuring VSCode is a lot more involved, but it is a lot more feature rich out of the box. It's important to learn all of these editors at a cursory level because editing text is the bread and butter of software development. Above all it is crucial to develop a workflow that is comfortable and efficient for you. I recommend starting with VSCode and then moving to vim or emacs as you become more comfortable with the language you are working with.
-
-
-Managing dotfiles.
-
-Software is configured through dotfiles. A developer must manage and track there dotfiles in order to ensure there work is reproducable. I recommand a bare git repo under `$HOME` [^1720954338] [^1720954344], however tools like Stow and Chezmoi are good too.
 
 [^1720954344]: [RyanGreenup / bare_dot_go · GitLab](https://gitlab.com/RyanGreenup/bare_dot_go)
 [^1720954338]: [RyanGreenup/DotFiles: All my DotFiles and Templates](https://github.com/RyanGreenup/DotFiles)
@@ -65,3 +51,5 @@ This will be broken up into three topics:
 Throughout the semester, students will be maintaining each of the projects and submitting pull requests and issues to each other. This is to ensure that students are able to work in a team and that they are able to communicate effectively with each other.
 
 Students will be required to document every step of the way, this will be done in markdown and uploaded to the repository as a static site.
+
+[^1720952337]: [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#summary)

@@ -3,7 +3,7 @@ authors = ["Ryan G"]
 language = "en"
 multilingual = false
 src = "src"
-title = "IT1010 -- Statistics"
+title = "IT2000 -- Software Development"
 
 # For Admonitions
 # https://github.com/tommilligan/mdbook-admonish

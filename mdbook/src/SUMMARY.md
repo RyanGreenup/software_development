@@ -6,6 +6,7 @@
 # Best Practices of Software Developemnt
 
 - [Introduction to the Software Development Life Cycle](introduction-to-the-software-development-life-cycle.md)
+
     - [Developing a Developer Workflow](developing-a-developer-workflow.md)
     - [Dependency Mangement](dependency-mangement.md)
     - [Licensing](licensing.md)
