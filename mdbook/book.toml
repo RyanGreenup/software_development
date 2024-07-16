@@ -3,7 +3,7 @@ authors = ["Ryan G"]
 language = "en"
 multilingual = false
 src = "src"
-title = "IT2000 -- Software Development"
+title = "Introduction to Software Development"
 
 # For Admonitions
 # https://github.com/tommilligan/mdbook-admonish

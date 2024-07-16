@@ -38,4 +38,17 @@
 
 
 
+# TODOs
 
+- Activity Diagram
+  - PlantUML
+  - Mermaid
+- UML Diagram
+  - PlantUML
+  - Mermaid
+- Database Schema
+  - DuckDB
+  - SQLite
+  - PostgresQL
+- Architectural Configuration Diagram
+- Subsystem Architectural Design Diagram
