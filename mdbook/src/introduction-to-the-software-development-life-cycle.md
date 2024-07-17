@@ -218,6 +218,35 @@ Produce the plot of that series using the following approaches:
     1. Procedurally
     2. Object Oriented
 ## Visualizing Software Development
+
+UML is a standard way of visualizing software development. It can be used to create diagrams that show the structure of a codebase, the relationships between different components, and the flow of data through a system.
+
+There are many different types of UML diagrams, each of which serves a different purpose. Some of the most common types of UML diagrams include:
+
+
+- Class diagrams
+- Sequence diagrams
+- Use case diagrams
+- Activity diagrams
+- State diagrams
+- Component diagrams
+- Deployment diagrams
+- Object diagrams
+
+See
+
+UML diagrams are not universally loved, see e.g. [^1721123560] by the developer of Mermaid.js. However, it is useful to be able to put together a diagram when necessary.
+
+[^1721123560]: [Sequence diagrams, the only good thing UML brought to software development · MermaidChart Blog](https://www.mermaidchart.com/blog/posts/sequence-diagrams-the-good-thing-uml-brought-to-software-development)
+
+More generally there are:
+
+- Mindmaps [^1721123768] [^1721123805]
+
+[^1721123805]: [Mindmap | Mermaid](https://mermaid.js.org/syntax/mindmap.html)
+[^1721123768]: [MindMap syntax and features](https://plantuml.com/mindmap-diagram)
+
+
 ### Software
 
 There is a host of software that can be used to produce visualizations of Software Development, I'll list a few below, but in this subject we'll primarily use Mermaid and PlantUML:
@@ -227,19 +256,224 @@ There is a host of software that can be used to produce visualizations of Softwa
     - Graphviz
 - Diagrams
     - Mermaid
-    - PlanTUML
+    - PlanTUML [^1721123699]
     - Tikz
+        - PyTikz
     - Draw.io
 - Gantt Charts
     - Taskjuggler
 
-### Work Sequence for Draft Iteration
+[^1721123699]: [plantuml/plantuml: Generate diagrams from textual description](https://github.com/plantuml/plantuml)
+### Static Analysis
+
+A lot of software
+
+Python has a package called `pyreverse` [^1721121972] that will generate UML diagrams via Graphviz. This can be useful for visualizing the structure of a codebase.
+
+[^1721121972]: [Pyreverse - Pylint 3.3.0-dev0 documentation](https://pylint.pycqa.org/en/latest/pyreverse.html)
+
+
+### Large Language Models
+
+With examples, many LLMs can be used to generate code, but they can also be used to generate documentation, e.g. the following is a [Fabric](https://github.com/danielmiessler/fabric) prompt to generate a mermaid diagram:
+
+```bash
+cat /tmp/file.md |\
+    fabric \
+        --remoteOllamaServer=http://localhost:11434 \
+        --model codestral:latest \
+        --pattern $(fabric --list | fzf) \
+        --stream | wl-copy && notify-send "done"
+```
+
+In this example I've use [ollama](https://github.com/ollama/ollama), a wrapper around [llama.cpp](https://github.com/ggerganov/llama.cpp) to run the inference locally on my own machine.
+
+Rarely will the results be exactly what you need but they make an excellent starting point! More importantly, by increasing the temperature and resampling you will have a large range of examples that can help you iterate on your own ideas.
+
+It can be helfpul to browse through the documentation and online cheat-sheets [^1721124635]
+
+[^1721124635]: [Mermaid Cheat Sheet @ https://jojozhuang.github.io](https://jojozhuang.github.io/tutorial/mermaid-cheat-sheet/)
+
+For example, `codestral` produced the following output using that prompt and the code from above:
+
+```mermaid
+classDiagram
+    class Shape{
+        +area()
+        +perimeter()
+    }
+
+    note for Shape "This is simply a template"
+    note for Square "Should square inherit from Rectangle?"
+
+    class Circle{
+        -radius: int
+        +area(): float
+        +perimeter(): float
+    }
+
+    class Square{
+        -side: int
+        +area(): float
+        +perimeter(): float
+    }
+
+    class Triangle{
+        -base: int
+        -height: int
+        +area(): float
+        +perimeter(): float
+    }
+
+    Shape <|-- Circle
+    Shape <|-- Square
+    Shape <|-- Triangle
+  ```
+
+> [!NOTE]
+> Produce a UML a diagram
+
+
+### Object Diagrams
+Object Diagrams are implemented in both Mermaid [^1721124028] and PlantUML [^1721124035]. Plantuml can be particularly convenient as it offers support for `.yaml` [^1721124145] definitions.
+
+Here we will recreate a Work Sequence for Draft Iteration using Mermaid:
+
+
+```mermaid
+erDiagram
+    CUSTOMER ||--|{ ORDER : places
+    CUSTOMER {
+        string name
+        string custNumber
+        string sector
+    }
+    ORDER ||--|{ LINE-ITEM : contains
+    ORDER {
+        int orderNumber
+        string deliveryAddress
+    }
+    LINE-ITEM {
+        string productCode
+        int quantity
+        float pricePerUnit
+    }
+
+
+```
+
+[^1721124145]: [plantuml.com/yaml](https://plantuml.com/yaml)
+[^1721124035]: [Object Diagram syntax and features](https://plantuml.com/object-diagram) cited in [plantuml/plantuml: Generate diagrams from textual description](https://github.com/plantuml/plantuml)
+[^1721124028]: [Entity Relationship Diagrams | Mermaid](https://mermaid.js.org/syntax/entityRelationshipDiagram.html)
+#### Work Sequence for Draft Iteration
+
+Work sequences are a way to visualize the steps in a process. They can be used to show the order in which tasks should be completed, the dependencies between tasks, and the overall progress of a project.
+
+```mermaid
+stateDiagram-v2
+    First: "zzzzzzzzzzzzz"
+    [*] --> First
+    state First {
+        [*] --> second
+        second --> [*]
+    }
+
+```
 
 ```mermaid
 sequenceDiagram
+
     Alice->>John: Hello John, how are you?
     activate John
     John-->>Alice: Great!
     deactivate John
 ```
 
+```mermaid
+sequenceDiagram
+    actor Alice
+    actor Bob
+    Alice->>Bob: Hi Bob
+    Bob->>Alice: Hi Alice
+```
+
+
+```mermaid
+gantt
+    dateFormat HH:mm
+    axisFormat %H:%M
+    title Daily Schedule
+    %% Tasks
+    section Tasks
+    Finalise Quartz and MD Book Workflow :active, 10:30, 11:00
+    Finish Ch. 1 of Statistical Learning in Finance :active, 11:00, 12:00
+    Write Note Dispatcher Screen (Py/Fish) :active, 12:00, 12:30
+    Merge all Notes off Dokuwiki and Mediawiki :active, 12:38, 13:00
+    Job Application for AE Capital :active, 13:08, 15:00
+    Gym :active, 15:00, 16:00
+    Cardio :active, 16:08, 17:08
+    Prepare for SDM :active, 17:39, 18:39
+    UHE -- Write up notes on Search Sort and Complexity Analysis :active, 19:00, 20:00
+```
+
+```mermaid
+stateDiagram
+    [*] --> Start
+    Start --> SiteSelection
+    Start --> TagSelection
+    SiteSelection --> Filtering
+    TagSelection --> Filtering
+    Filtering --> Viewing
+    Filtering --> Editing
+    Viewing --> Finish
+    Editing --> Finish
+```
+This diagram shows the states of your application and how they transition between each other. The initial state is "Start", where the user can select either site selection or tag selection. From there, the user can proceed to filter sites or tags, view the filtered results, edit them, or finish their work. If the user decides to finish their work at any point, they will reach a final state of "Finish".
+
+
+```mermaid
+stateDiagram-v2
+    [*] --> First
+    First --> Second
+    First --> Third
+
+    state First {
+        [*] --> fir
+        fir --> [*]
+    }
+    state Second {
+        [*] --> sec
+        sec --> [*]
+    }
+    state Third {
+        [*] --> thi
+        thi --> [*]
+    }
+```
+
+
+Here is a mermaid diagram of the work sequence for draft iteration based on the provided YAML file [^1721112086] :
+
+[^1721112086]: https://mermaid.js.org/syntax/entityRelationshipDiagram.html
+
+```mermaid
+erDiagram
+    GEOMETRY ||--o{ CIRCLE : calculates
+    GEOMETRY ||--o{ RECTANGLE : calculates
+    GEOMETRY ||--o{ TRIANGLE : calculates
+    GEOMETRY {
+        string shape
+        list dimensions
+    }
+    CIRCLE {
+        function calculate_circle_area
+    }
+    RECTANGLE {
+        function calculate_rectangle_area
+    }
+    TRIANGLE {
+        function calculate_triangle_area
+    }
+```
+
+Note: The mermaid diagram is a visual representation of the work sequence for draft iteration. It shows the start and end points of each task, as well as the relationships between them. In this case, the tasks are represented by boxes labeled with their names, and the arrows represent the links between them.

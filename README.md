@@ -28,3 +28,20 @@ Consider increasing inotify limits
 echo 256   | sudo tee /proc/sys/fs/inotify/max_user_instances
 echo 749024| sudo tee /proc/sys/fs/inotify/max_user_watches
 ```
+
+
+
+# TODOs
+
+- Activity Diagram
+  - PlantUML
+  - Mermaid
+- UML Diagram
+  - PlantUML
+  - Mermaid
+- Database Schema
+  - DuckDB
+  - SQLite
+  - PostgresQL
+- Architectural Configuration Diagram
+- Subsystem Architectural Design Diagram

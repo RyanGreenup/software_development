@@ -36,19 +36,3 @@
 - [Activity and Sequence Diagrams](activity-and-sequence-diagrams.md)
 - [Implementation: A PySide6 GUI](implementation:-a-pyside6-gui.md)
 
-
-
-# TODOs
-
-- Activity Diagram
-  - PlantUML
-  - Mermaid
-- UML Diagram
-  - PlantUML
-  - Mermaid
-- Database Schema
-  - DuckDB
-  - SQLite
-  - PostgresQL
-- Architectural Configuration Diagram
-- Subsystem Architectural Design Diagram
