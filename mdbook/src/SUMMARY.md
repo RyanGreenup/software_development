@@ -6,10 +6,10 @@
 # Best Practices of Software Developemnt
 
 - [Introduction to the Software Development Life Cycle](introduction-to-the-software-development-life-cycle.md)
-
     - [Developing a Developer Workflow](developing-a-developer-workflow.md)
     - [Dependency Mangement](dependency-mangement.md)
     - [Licensing](licensing.md)
+[Programming Fundamentals](programming-fundamentals.md)
 - [Test Driven Development](test-driven-development.md)
     - [Documentation](documentation.md)
     - [Debugging](debugging.md)
@@ -18,6 +18,7 @@
     - [Makefiles](makefiles.md)
 - [Requirement Analysis and Introduction to Object-Oriented Design](requirement-analysis-and-introduction-to-object-oriented-design.md)
 - [Implementation: Writing a CLI in Python and Rust](implementation:-writing-a-cli-in-python-and-rust.md)
+- [Software Diagrams and Visualization](software-diagrams-and-visualization.md)
 
 # Object Oriented Programming
 
