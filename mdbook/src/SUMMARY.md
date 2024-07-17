@@ -16,15 +16,15 @@
     - [Git](git.md)
         - [Git Hooks](git-hooks.md)
     - [Makefiles](makefiles.md)
-- [Requirement Analysis and Introduction to Object-Oriented Design](requirement-analysis-and-introduction-to-object-oriented-design.md)
 - [Implementation: Writing a CLI in Python and Rust](implementation:-writing-a-cli-in-python-and-rust.md)
+
+# Software Design
+
 - [Software Diagrams and Visualization](software-diagrams-and-visualization.md)
-GUI Development
-    - Immediate Mode (Egui)
-    - Statful (PySide6)
-[Database Integration](database-integration.md)
-[Software Development Tools](software-development-tools.md)
-[Web Development](web-development.md)
+- [Use Cases and Use Case Diagrams](use-cases-and-use-case-diagrams.md)
+- [Domain Modelling and Class Diagrams](domain-modelling-and-class-diagrams.md)
+- [Activity and Sequence Diagrams](activity-and-sequence-diagrams.md)
+- [Requirement Analysis and Introduction to Object-Oriented Design](requirement-analysis-and-introduction-to-object-oriented-design.md)
 
 # Object Oriented Programming
 
@@ -33,13 +33,14 @@ GUI Development
 - [Object Oriented Concepts: Classes and Objects](classes-and-objects.md)
       *Instantiation, Constructors, Destructors, Encapsulation*
 - [Iheritance and Polymorphism](iheritance-and-polymorphism.md)
-- [Use Cases and Use Case Diagrams](use-cases-and-use-case-diagrams.md)
+- [GUI Development](gui-development.md)
 - [Implementation: Writing an Immediate Mode Gui in Rust](implementation:-writing-an-immediate-mode-gui-in-rust.md)
+# Developing Software
 
 
-# Designing Object Oriented Software
-
-- [Domain Modelling and Class Diagrams](domain-modelling-and-class-diagrams.md)
-- [Activity and Sequence Diagrams](activity-and-sequence-diagrams.md)
+- [Database Integration](database-integration.md)
+- [Software Development Tools](software-development-tools.md)
+- [Web Development](web-development.md)
 - [Implementation: A PySide6 GUI](implementation:-a-pyside6-gui.md)
+
 
