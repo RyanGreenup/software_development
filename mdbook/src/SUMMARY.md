@@ -19,6 +19,12 @@
 - [Requirement Analysis and Introduction to Object-Oriented Design](requirement-analysis-and-introduction-to-object-oriented-design.md)
 - [Implementation: Writing a CLI in Python and Rust](implementation:-writing-a-cli-in-python-and-rust.md)
 - [Software Diagrams and Visualization](software-diagrams-and-visualization.md)
+GUI Development
+    - Immediate Mode (Egui)
+    - Statful (PySide6)
+[Database Integration](database-integration.md)
+[Software Development Tools](software-development-tools.md)
+[Web Development](web-development.md)
 
 # Object Oriented Programming
 
