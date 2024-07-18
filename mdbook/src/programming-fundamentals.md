@@ -1,15 +1,4 @@
 # Programming Fundamentals
-
-- Introduction to Python
-- Introduction to Rust
-
-
-- Types
-- IO
-- Functions
-- Classes
-- Inheritance
-
 ## Tasks
 ### Readings
 
@@ -17,17 +6,14 @@ Students are required to read the following:
 
 - https://docs.python.org/3/tutorial/index.html
 - https://doc.rust-lang.org/book/
-
 ### Exercises
 
 Some questions are included in this book, however, students are required to generate and answer 8 questions from each document (try using [this prompt from Fabric](https://github.com/danielmiessler/fabric/tree/main/patterns/create_quiz) combined with exemplar questions) Students will be ask to justify why they chose the questions they did and whether or not they believe they capture the important components of what they did
-
 ### Remarks
 
 You will not be able to complete both books within the week, you are encouraged to skim over the documentation and refer back to it as you get stuck.
 
 Each time you refer back to the documentation, you should write a note in your notes about what you were looking for and why you were looking for it and include a MWE and a set of answered quiz questions using the above approach. This will help you to remember where to find the information in the future.
-
 ## Topics
 
 1. Language Introduction
@@ -58,17 +44,15 @@ Each time you refer back to the documentation, you should write a note in your n
    - Pandas
    - Matplotlib
 9. Q & A and Wrap-up
-
 ## Programming Basics
-
 ### Language Introduction
+#### Python
 Python is a high level interpreted scripting language that was firs released in 1991. Python's design is concerned with readability and ease of use. It has a dynamic type system, garbage collector and is interpreted with a large standard library, as a software developer this is your swiss army knife and duct tape, you'll typically reach for it first before you change gears into a into a language that is more suitable for the problem.
 
 In terms of error handling, Python uses exceptions and takes the philosophy that a user should "ask for forgiveness, not permission". This means that it is better to try something and catch the error than to check if it is possible before trying. One reason for this philosophy is that the state of a system may change after checking and then leaping, a disadvantage is that developers may forget to handle errors.
 
 In terms of OOP, Python does not have access modifiers like public, private and protected, instead the language takes the philosophy that "We are all adults here" and denotes class attributes that **should** be private with a leading `_` underscore. It has also become convention to denote attributes assigned after construction with a trailing `_`.
-
-### Rust Introduction
+#### Rust
 Rust is a lower level statically-typed compiled language with lots of helpful zero-cost abstraction and a focus on memory safety and performance. Unlike Python Rust does not use a garbage collector, instead borrowing and moving is used to manage memory. This means that Rust is a lot faster than Python, but also more difficult to write.
 
 Rust can be a good compliment to Python as it is more accessible than C or C++, has excellent documentation, a vibrant community and is often used when Python is too slow.
@@ -76,10 +60,128 @@ Rust can be a good compliment to Python as it is more accessible than C or C++, 
 In terms of error handling, rust functions return a `Result` type which is either `Ok` or `Err`, a developer is required to check this and handle the error, every time. This is the exact opposite of Python's philosophy.
 
 Rust implements OOP in a way very different from python, it refers to classes as structs and methods implementations ( `impl`), Unlike Python, all struct attributes are private by default and must be explicitly marked as public. Again, the opposite of python. The implementation of inheritance is the most different feature, we'll refer you to *Rust Book* for more information on that.
-
 ### Basics
 
-The following example shows an example of variables and control flow in Rust, try this on your machine right now:
+> [!NOTE]
+> Do not read this section, open up your editor and run all of these programs and transcribe them into your notes
+>
+#### Variables
+In Rust variables are declared with the `let` statement, the type of the variable is inferred by the compiler if it is defined in the function, however, it can be explicitly declared and in some situations this is necessary.
+
+```rust
+fn main() {
+    let x = 5;           // x is an integer
+    let y: i32 = 6;     // y is an integer
+    let z: f32 = 7.0;   // z is a float
+    let Xs: Vec<i32> = vec![1, 2, 3, 4, 5]; // Xs is a vector of integers
+}
+```
+
+```python
+x = 5           # x is an integer
+y: int = 6      # y is an integer
+z: float = 7.0  # z is a float
+Xs: List[int] = [1, 2, 3, 4, 5] # Xs is a list of integers
+```
+#### Control Flow
+##### Conditionals
+###### If Tests
+If Tests in python and rust are quite similar:
+
+
+```rust
+let x = 6;
+if x % 2 == 0 {
+    println!("x is even.");
+} else {
+    println!("x is odd.");
+}
+
+let mut counter = 0;
+while counter < 5 {
+    println!("{}", counter);
+    counter += 1;
+}
+
+for num in 1..=5 {
+    println!("{}", num);
+}
+```
+
+
+```python
+x = 6
+
+if x % 2 == 0:
+    print("x is even.")
+else:
+    print("x is odd.")
+
+counter = 0
+while counter < 5:
+    print(counter)
+    counter += 1
+
+for num in range(1, 6):
+    print(num)
+```
+###### Enums
+
+Rust relies heavily on Enum's, a type that can represent one of several values, this is useful for representing states, e.g. a traffic light. In Rust, enums are defined with the `enum` keyword and in Python they are defined with the `enum` module.
+
+```rust
+// Define an enum
+enum TrafficLight {
+    Red,
+    Yellow,
+    Green,
+}
+
+fn action(light: &TrafficLight) {
+    match light {
+        TrafficLight::Red => println!("Stop!"),
+        TrafficLight::Yellow => println!("Ready!"),
+        TrafficLight::Green => println!("Go!"),
+    }
+}
+
+fn main() {
+    // Use the enum in a match statement
+    let stop_light = TrafficLight::Red;
+    action(&stop_light);
+    // Outputs: Stop!
+}
+```
+/home/ryan/Studies/Teaching/2024/uhe/it2000_software_development/mdbook/src/programming-fundamentals.md
+
+```python
+from enum import Enum
+
+class TrafficLight(Enum):
+    Red = "Stop!"
+    Yellow = "Stop if Able"
+    Green = "Go!"
+
+def action(light: TrafficLight):
+    match light:
+        case TrafficLight.Red:
+            print(light.value)
+        case TrafficLight.Yellow:
+            print(light.value)
+        case TrafficLight.Green:
+            print(light.value)
+
+def main():
+    # Use the enum in a match statement
+    stop_light = TrafficLight.Red
+    action(stop_light)
+    # Outputs: Stop!
+```
+#### Pass by Reference, Value and Move
+##### Basic Declaration
+
+
+The following example declares some variables in rust
 
 
 ```rust
@@ -87,6 +189,8 @@ let x = 6;      // x cannot be changed
 let mut y = 7;  // y can be changed
 y = 4;          // this is fine
 ```
+
+This example extends that to a vector:
 
 ```rust
 // This x_vec cannot be changed as we didn't use mut
@@ -101,6 +205,8 @@ let x_vec: Vec<i32> = vec![1, 2, 3, 4, 5];
 
 println!(x_vec); // This will print the first as the second is out of scope
 ```
+##### Disambiguation -- Mutable and Immutable
+
 
 In python there are mutible and immutable types, this doesn't mean you can't change the value of a variable, rather, it means that a copy of that variable is made when it is passed to a function  or method. It's immutable in the sense that the underlying data cannot be changed but is instead overwritten. Simple types like `int` and `float` are copied into a function (immutable) but aggregate types like `list` and `dict` are passed by reference (mutable), meaning the function will change the outside data.
 
@@ -108,6 +214,8 @@ In Rust, mutability via the `mut` keyword changes a variable from read only to r
 
 
 When a variable is sent to a function in Rust, it is moved into that function and we no longer have access to it. In Python a link to that variable goes to the function This doesn't happen for simple data types like `int` / `i32` and `float` / `f32` , those are simply copied, but it does happen for `Vec`tors. Similarly in Python, simple types like `int` and `float`
+##### Pass by Reference
+In this example, Rust moves the variable into the function `print_sum()`
 
 ```rust
 fn print_sum(som_val: Vec<i32>) {
@@ -136,7 +244,7 @@ fn main() {
 }
 ```
 
-In Python,  a similar example:
+In Python, the list is passed by reference, so the function will change the outside data:
 
 ```python
 
@@ -157,7 +265,7 @@ def main():
     # [6, 2, 3, 4, 5]
 ```
 
-In Rust, the `&` symbol must be used to explicitly show the variable is going to change.
+In Rust, the `&` symbol must be used to explicitly show the variable is going to change:
 
 ```rust
 fn replace_first_val(x_vec: &mut Vec<u32>) {
@@ -179,106 +287,115 @@ fn main() {
 }
 ```
 
-In Rust the `.clone()` method would make a copy and in python `copy.deepcopy()` would be used to make a copy.
-
-
-If Tests are handled with the `if` keyword in both rust and python:
-
+In C, and C++ a similar symbol is used and it is said to create a *pointer*, in Rust the function is said to *borrow* the variable, in Python the function is said to *reference* the variable. Borrowing the variable in Rust creates a set of rules the variable must follow in order to ensure memory safety, for example, a variable cannot be borrowed mutably and then later borrowed immutably, for example the below code would not compile:
 
 ```rust
-let x = 6;
-if x % 2 == 0 {
-    println!("x is even.");
-} else {
-    println!("x is odd.");
+fn replace_first_val(x_vec: &mut Vec<u32>) {
+    x_vec[0] = 6;
 }
 
-let mut counter = 0;
-while counter < 5 {
-    println!("{}", counter);
-    counter += 1;
-}
-
-for num in 1..=5 {
-    println!("{}", num);
-}
-```
-
-
-```rust
-x = 6
-
-if x % 2 == 0:
-    print("x is even.")
-else:
-    print("x is odd.")
-
-counter = 0
-while counter < 5:
-    print(counter)
-    counter += 1
-
-for num in range(1, 6):
-    print(num)
-```
-
-Enum's are a type that can represent one of several values, this is useful for representing states, e.g. a traffic light. In Rust, enums are defined with the `enum` keyword and in Python they are defined with the `enum` module.
-
-```rust
-// Define an enum
-enum TrafficLight {
-    Red,
-    Yellow,
-    Green,
-}
-
-fn action(light: &TrafficLight) {
-    match light {
-        TrafficLight::Red => println!("Stop!"),
-        TrafficLight::Yellow => println!("Ready!"),
-        TrafficLight::Green => println!("Go!"),
-    }
+fn print_total(x_vec: &Vec<u32>) {
+    let total: u32 = x_vec.iter().sum();
+    println!("Sum of all elements: {}", total);
 }
 
 fn main() {
-    // Use the enum in a match statement
-    let stop_light = TrafficLight::Red;
-    action(&stop_light);
-    // Outputs: Stop!
+    // Define x_vec
+    let mut x_vec: Vec<u32> = vec![1, 2, 3, 4, 5];
+
+    // x_vec is not copied or moved, it is passed by reference
+    replace_first_val(&mut x_vec);
+
+    // Now, the vector can be passed by (immutable) reference to print_total()
+    print_total(&x_vec);
+
+    // Also, we can print the vector itself
+    println!("Updated Vector: {:?}", x_vec);
 }
 ```
 
+This is because the `print_total()` only has read-only rights and cannot claim read-write privileges. This helps to catch mistakes, in C and C++ this can be a common source of bugs, for example the `print_total()` function should **never** modify the array, but is allowed, e.g. in C:
 
-```python
-from enum import Enum
+```C
+#include <stdio.h>
+#include <stdlib.h>
 
-class TrafficLight(Enum):
-    Red = "Stop!"
-    Yellow = "Stop if Able"
-    Green = "Go!"
+// Define the size of the array
+#define SIZE 5
 
-def action(light: TrafficLight):
-    match light:
-        case TrafficLight.Red:
-            print(light.value)
-        case TrafficLight.Yellow:
-            print(light.value)
-        case TrafficLight.Green:
-            print(light.value)
+void replace_first_val(unsigned int *x_array) {
+    // Replace the first element with 6
+    x_array[0] = 6;
+}
 
-def main():
-    # Use the enum in a match statement
-    stop_light = TrafficLight.Red
-    action(stop_light)
-    # Outputs: Stop!
+void print_total(unsigned int *x_array) {
+    // Change the first value
+    replace_first_val(x_array);
+
+    // Calculate the sum of all elements
+    unsigned int total = 0;
+    for (int i = 0; i < SIZE; ++i) {
+        total += x_array[i];
+    }
+    printf("Sum of all elements: %u\n", total);
+}
+
+int main() {
+    // Define x_array
+    unsigned int x_array[SIZE] = {1, 2, 3, 4, 5};
+
+    // Print the total
+    print_total(x_array);
+
+    // Also, we can print the array itself
+    printf("Updated Array: ");
+    for(int i = 0; i < SIZE; i++) {
+        printf("%u ", x_array[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
 ```
 
+In rust, we must refactor the code:
 
+```rust
+fn replace_first_val(x_vec: &mut Vec<u32>) {
+    x_vec[0] = 6;
+}
 
+fn print_total(x_vec: &Vec<u32>) {
+    let total: u32 = x_vec.iter().sum();
+    println!("Sum of all elements: {}", total);
+}
 
+fn main() {
+    // Define x_vec
+    let mut x_vec: Vec<u32> = vec![1, 2, 3, 4, 5];
 
+    // x_vec is not copied or moved, it is passed by reference
+    replace_first_val(&mut x_vec);
+
+    // Now, the vector can be passed by (immutable) reference to print_total()
+    print_total(&x_vec);
+
+    // Also, we can print the vector itself
+    println!("Updated Vector: {:?}", x_vec);
+}
+```
+
+This is a potential downside to rust, although the code is often more robust, it blocks potential solutions that are valid. For this reason some modern languages, e.g. Zig, do not take this borrow-checker approach.
+##### Clones
+
+In Rust the `.clone()` method would make a copy and in python `copy.deepcopy()` would be used to make a copy.
+#### TODO Functions
+#### TODO Data Structures
+#### TODO Basic Object-Oriented Programming
+#### TODO Exception Handling
+#### TODO Standard Library
+#### TODO Packages Overview
 ## Practical
-
 ### Practice Questions
 
 Students are encouraged to use Local LLMs (and if necessary proprietary LLMs) to answer these questions. The fundamental goal here is to understand the underlying behaviour of the languages, understand how to use these languages productively and to internalise enough of the language to quickly retrieve that knowledge when needed.
@@ -329,8 +446,6 @@ Students are encouraged to use Local LLMs (and if necessary proprietary LLMs) to
     - After acheiving this in both Python and Rust
         - Describe how Python classes differ from Rust structs
         - Show how a `@classmethod` can be used to create a `New()` and `Default()` method similar to the approach taken in rust.
-
-
 ## Generating Questions
 
 I recommend the prompts by Fabric, they work well and are convenient, try something like this:
@@ -347,7 +462,7 @@ cat /tmp/file.md |
         --stream | wl-copy
 ```
 
-Providing examples to LLMs is a well-known strategy to guide the output, try this prompt in order to generate better questions:
+Providing examples to LLMs is a well-known strategy to guide the output, try this prompt in order to generate your questions:
 
 
 ```markdown
@@ -390,14 +505,13 @@ Here are some example questions:
     - Create testcases for this program.
 \# User
 ```
-
-
-
 ## Solutions
+
+Some solutions are included below, solutions will be discussed in class:
 
 - [➡️ /Solutions](programming-fundamentals_solutions.md)
 
 
 
 
-        [^1721195215]: [sharkdp/hyperfine: A command-line benchmarking tool](https://github.com/sharkdp/hyperfine)
+[^1721195215]: [sharkdp/hyperfine: A command-line benchmarking tool](https://github.com/sharkdp/hyperfine)
