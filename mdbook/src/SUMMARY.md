@@ -4,6 +4,7 @@
 # Best Practices of Software Developemnt
 - [Introduction to the Software Development Life Cycle](introduction-to-the-software-development-life-cycle.md)
     - [Developing a Developer Workflow](developing-a-developer-workflow.md)
+    - [Software Development Tools](software-development-tools.md)
     - [Dependency Mangement](dependency-mangement.md)
     - [Licensing](licensing.md)
 - [Programming Fundamentals](programming-fundamentals.md)
@@ -32,9 +33,7 @@
 - [Implementation: Writing an Immediate Mode Gui in Rust](implementation:-writing-an-immediate-mode-gui-in-rust.md)
 # Developing Software
 
-
 - [Database Integration](database-integration.md)
-- [Software Development Tools](software-development-tools.md)
 - [Web Development](web-development.md)
 - [Implementation: A PySide6 GUI](implementation:-a-pyside6-gui.md)
 
