@@ -1,6 +1,8 @@
 # Git
 
-Workflow
+## Student Activities
+
+Use GPT4 and the `git` documentation to complete the following activities on your personal markdown notes or some personal code base:
 
 - [ ] Create a new branch
 - [ ] Push Branch
@@ -10,9 +12,11 @@ Workflow
 - [ ] Squash Merge
 - [ ] Delete Branch
 - [ ] Time Machine
+    - Write a CLI for a time machine as discussed below
 
 
-## Time Machine
+
+### Time Machine
 
 Emacs has a feature called git-time-machine which allows moving backward and forward through the commits in a document. It is very handy
 

@@ -3,6 +3,35 @@
 This subject develops skills around best practices in software development. This all starts with developing habits workflows, which itself begins with a knowledge and understanding of the tools and approaches that have been widely adopted in the community.
 
 These are written, broadly, in an order to help you get started.
+## Textbooks
+### Actionables
+
+1. Install Calibre
+2. Install Zotero
+2. Download the following textbooks and store them in calibre
+    - Software Design
+        - [ ] Systems Analysis and Design: In a Changing World by John W. Satzinger & Robert B. Jackson & Stephen D. Burd
+            - 9781305117204
+    - Writing
+        - William Strunk & E. B. White & Roger Angell
+            - ISBN: 9780205313426
+        - Joseph M. Williams & Joseph Bizup
+            - ISBN: 9780321898685
+    - Programming
+        - Bookmark:
+            -  [the Rust book](https://doc.rust-lang.org/stable/book/)
+            -  [the Python Tutorial](https://docs.python.org/3/tutorial/index.html)
+            -  [the PyTest Documentation]([pytest documentation](https://docs.pytest.org/en/stable/contents.html))
+            -  [the git book](https://git-scm.com/book/en/v2)
+        - Download
+            - Idiomatic Python by Jeff Knup
+    - Object Oriented Programming
+        - Design Patterns by The Gang of Four
+            - isbn: 9789332555402
+3. For each book:
+    - Add the ISBN to the metadata
+    - Update the Metadata to have all the appropriate information
+    - Add the book to Zotero using the ISBN
 ## Version Control
 ### What is Version Control
 Version control is analogous to track changes in something like *Microsoft Word*. It's a long list of changes that have been made to a document, but it's a lot more powerful than that. It allows you to see who made the changes, when they were made, and why they were made [^1720957340]. It also allows you to revert to a previous version of the document if you make a mistake and have multiple versions simultaneously.
