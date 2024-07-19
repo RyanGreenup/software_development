@@ -33,3 +33,7 @@
 [^1721354840]: [Stable Code 3B: Coding on the Edge — Stability AI](https://stability.ai/news/stable-code-2024-llm-code-completion-release)
 [^1721354908]: [mixedbread-ai/mxbai-embed-large-v1 · Hugging Face](https://huggingface.co/mixedbread-ai/mxbai-embed-large-v1)
 [^1721354926]: Your tutor and GPT4 can help you with this, you are not expected to understand all the mathematics here, merely implement the code.
+[^1721354138]: [python-poetry/poetry: Python packaging and dependency management made easy](https://github.com/python-poetry/poetry)
+[^1721354115]: [tiangolo/typer: Typer, build great CLIs. Easy to code. Based on Python type hints.](https://github.com/tiangolo/typer)
+[^1721354110]: [pallets/click: Python composable command line interface toolkit](https://github.com/pallets/click)
+
