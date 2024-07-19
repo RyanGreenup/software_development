@@ -13,7 +13,7 @@
     - [Git](git.md)
         - [Git Hooks](git-hooks.md)
     - [Makefiles](makefiles.md)
-- [Implementation: Writing a CLI in Python and Rust](implementation:-writing-a-cli-in-python-and-rust.md)
+- [Implementation: Writing a CLI in Python and Rust](implementation_writing-a-cli-in-python-and-rust.md)
 # Software Design
 
 - [Software Diagrams and Visualization](software-diagrams-and-visualization.md)
