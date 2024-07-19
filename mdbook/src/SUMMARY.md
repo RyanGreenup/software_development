@@ -30,11 +30,13 @@
       *Instantiation, Constructors, Destructors, Encapsulation*
 - [Iheritance and Polymorphism](iheritance-and-polymorphism.md)
 - [GUI Development](gui-development.md)
-- [Implementation: Writing an Immediate Mode Gui in Rust](implementation:-writing-an-immediate-mode-gui-in-rust.md)
+- [Implementation: Writing an Immediate Mode Gui in Rust](implementation_writing-an-immediate-mode-gui-in-rust.md)
 # Developing Software
 
 - [Database Integration](database-integration.md)
 - [Web Development](web-development.md)
-- [Implementation: A PySide6 GUI](implementation:-a-pyside6-gui.md)
+- [Implementation: A PySide6 GUI](implementation_a-pyside6-gui.md)
+
+
 
 
